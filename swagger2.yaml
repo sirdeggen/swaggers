@@ -1,0 +1,23 @@
+openapi: 3.0.0
+info:
+  title: Something else
+  version: 1.0.0
+  description: Test
+servers:
+  - url: http://localhost:3302
+paths:
+  /v1/version:
+    get:
+      summary: Returns the current version of the kernel.
+      responses:
+        "200":
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                  result:
+                    type: string
