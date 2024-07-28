@@ -8,59 +8,12 @@
     <link rel="stylesheet" type="text/css" href="dist/index.css" />
     <link rel="icon" type="image/png" href="dist/favicon-32x32.png" sizes="32x32" />
     <link rel="icon" type="image/png" href="dist/favicon-16x16.png" sizes="16x16" />
-    <style>
-      html {
-        box-sizing: border-box;
-        overflow: -moz-scrollbars-vertical;
-        overflow-y: scroll;
-      }
-    
-      *,
-      *:before,
-      *:after {
-        box-sizing: inherit;
-      }
-    
-      body {
-        margin: 0;
-        background: #fafafa;
-      }
-    </style>
   </head>
 
   <body>
-    <div>
-      <label for="api-select">Choose an API:</label>
-      <select id="api-select">
-        <option value="swagger.yaml">API 1</option>
-        <option value="swagger2.yaml">API 2</option>
-        <!-- Add more options as needed -->
-      </select>
-    </div>
     <div id="swagger-ui"></div>
     <script src="dist/swagger-ui-bundle.js" charset="UTF-8"> </script>
     <script src="dist/swagger-ui-standalone-preset.js" charset="UTF-8"> </script>
     <script src="dist/swagger-initializer.js" charset="UTF-8"> </script>
-    <script>
-      window.onload = function () {
-        const ui = SwaggerUIBundle({
-          url: 'swagger/api1/swagger.yaml', // default API to load
-          dom_id: '#swagger-ui',
-          deepLinking: true,
-          presets: [
-            SwaggerUIBundle.presets.apis,
-            SwaggerUIStandalonePreset
-          ],
-          layout: "StandaloneLayout"
-        });
-
-        document.getElementById('api-select').addEventListener('change', function () {
-          const newUrl = this.value;
-          ui.initOAuth({
-            url: newUrl
-          });
-        });
-      }
-    </script>
   </body>
 </html>
