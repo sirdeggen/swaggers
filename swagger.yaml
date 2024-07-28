@@ -140,7 +140,7 @@ paths:
       requestBody:
         required: true
         content:
-          application/json:
+          application/octet-stream:
             schema:
               type: string
               format: binary
@@ -148,23 +148,10 @@ paths:
         "200":
           description: Successful response
           content:
-            application/json:
+            application/octet-stream:
               schema:
-                type: object
-                properties:
-                  returnTypeOfString:
-                    type: object
-                    properties:
-                      data:
-                        type: object
-                        properties:
-                          status:
-                            type: string
-                          result:
-                            type: string
-                  returnTypeOfUint8Array:
-                    type: string
-                    format: binary
+                type: string
+                format: binary
   /v1/decrypt:
     post:
       summary: Decrypts data with a key belonging to the user.
@@ -202,7 +189,7 @@ paths:
       requestBody:
         required: true
         content:
-          application/json:
+          application/octet-stream:
             schema:
               type: string
               format: binary
@@ -210,23 +197,10 @@ paths:
         "200":
           description: Successful response
           content:
-            application/json:
+            application/octet-stream:
               schema:
-                type: object
-                properties:
-                  returnTypeOfString:
-                    type: object
-                    properties:
-                      data:
-                        type: object
-                        properties:
-                          status:
-                            type: string
-                          result:
-                            type: string
-                  returnTypeOfUint8Array:
-                    type: string
-                    format: binary
+                type: string
+                format: binary
   /v1/createHmac:
     post:
       summary: Creates a SHA-256 HMAC with a key belonging to the user.
